@@ -9,7 +9,8 @@
 	Telegram.WebApp.ready();
 	Telegram.WebApp.MainButton.setText('Send doc').show().onClick(
 		function() {
-			const data = // TODO
+			const data = JSON.stringify(document.getElementById('var1').value);
+			console.log(data);
 			Telegram.WebApp.sendData(data);
 			Telegram.WebApp.close();
 		};
