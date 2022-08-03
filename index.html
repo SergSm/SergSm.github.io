@@ -5,21 +5,36 @@
 		<script src="script.js"></script>
 
 	</head>
+
+
+<script type="text/javascript">
+
+    Telegram.WebApp.ready();
+    Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
+        // const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
+        const data = JSON.stringify({'sdf', 'asd'});
+        Telegram.WebApp.sendData(data);
+        Telegram.WebApp.close();
+    });
+</script>
+
+
 	<body>
 	<p align="center">Hello World</p>
 	<img src="./images/sunset.jpg"></img>
 	<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-<!-- begin -->
+<!-- form begin -->
 	<form action="/action_page.php">
 	  <label for="var1">Var. input:</label>
 	  <input type="number" id="var1" name="var1"><br><br>
 
 	  <input type="submit" value="Submit">
 	</form>
-
+<!-- form end -->
    </body>
-<!-- end -->
+
+
 
 <script type="text/javascript">
     Telegram.WebApp.expand();
