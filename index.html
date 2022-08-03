@@ -2,28 +2,37 @@
 	<head>
 		<title>HellO!</title>
 		<link rel="stylesheet" href="styles.css">
-		<script src="script.js"></script>
-
+		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 	</head>
+
+<!-- main tg script begin -->
+	Telegram.WebApp.ready();
+	Telegram.WebApp.MainButton.setText('Send doc').show().onClick(
+		function() {
+			const data = // TODO
+			Telegram.WebApp.sendData(data);
+			Telegram.WebApp.close();
+		};
+	);
+
+<!-- main tg script end-->
+
 	<body>
-	<p align="center">Hello World</p>
-	<img src="./images/sunset.jpg"></img>
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-<!-- begin -->
-	<form action="/action_page.php">
-	  <label for="var1">Var. input:</label>
-	  <input type="number" id="var1" name="var1"><br><br>
+		<p align="center">Hello World</p>
+		<img src="./images/sunset.jpg"></img>
 
-	  <input type="submit" value="Submit">
-	</form>
 
-   </body>
-<!-- end -->
+		<form>
+		  <label for="var1">Var. input:</label>
+		  <input type="number" id="var1" name="var1"><br><br>
+		</form>
 
-<script type="text/javascript">
-    Telegram.WebApp.expand();
-</script>
+	</body>
 
+	<script type="text/javascript">
+	<!-- don't really need it now -->
+   	// Telegram.WebApp.expand();
+	</script>
 
 </html>
