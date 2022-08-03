@@ -1,40 +1,40 @@
-<html>
-	<head>
-		<title>HellO!</title>
-		<link rel="stylesheet" href="styles.css">
-		<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	</head>
-
-<!-- main tg script begin -->
+<!--
+    Simple static Telegram WebApp. Does not verify the WebAppInitData, as a bot token would be needed for that.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python-telegram-bot Example WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>-->
+</head>
 <script type="text/javascript">
-	Telegram.WebApp.ready();
-	Telegram.WebApp.MainButton.setText('Send doc').show().onClick(
-		function() {
-			const data = JSON.stringify(document.getElementById('var1').value);
-			console.log(data);
-			Telegram.WebApp.sendData(data);
-			Telegram.WebApp.close();
-		};
-	);
+    /*const colorPicker = new iro.ColorPicker('#picker', {
+        borderColor: "#ffffff",
+        borderWidth: 1,
+        width: Math.round(document.documentElement.clientWidth / 2),
+    });
+    colorPicker.on('color:change', function (color) {
+        document.body.style.background = color.hexString;
+    });*/
+
+    Telegram.WebApp.ready();
+    Telegram.WebApp.MainButton.setText('Сохранить данные').show().onClick(function () {
+        const data = JSON.stringify(document.getElementById('var1').value);
+        Telegram.WebApp.sendData(data);
+        Telegram.WebApp.close();
+    });
 </script>
-<!-- main tg script end-->
-
-	<body>
-
-		<p align="center">Hello World</p>
-		<img src="./images/sunset.jpg"></img>
-
-
-		<form>
-		  <label for="var1">Var. input:</label>
-		  <input type="number" id="var1" name="var1"><br><br>
-		</form>
-
-	</body>
-
-	<script type="text/javascript">
-	<!-- don't really need it now -->
-   	Telegram.WebApp.expand();
-	</script>
-
+<body style="background-color: #ffffff">
+<div style="position: absolute; margin-top: 5vh; margin-left: 5vw; height: 90vh; width: 90vw; border-radius: 5vh; background-color: var(--tg-theme-bg-color); box-shadow: 0 0 2vw
+ #000000;">
+    <div id="picker"
+         style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%"></div>
+</div>
+<label for="var1">Var. input:</label>
+</body>
+<script type="text/javascript">
+    Telegram.WebApp.expand();
+</script>
 </html>
